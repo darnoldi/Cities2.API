@@ -13,7 +13,18 @@ namespace Cities2.API.Models
 
         public string Description { get; set; }
 
-        public int NumberOfPointsOfInterest { get; set; }
+        public int NumberOfPointsOfInterest
+        {
+            get
+            {
+                return PointsOfInterest.Count;
+            }
+        }
+
+
+        public ICollection<PointsOfInterestDto> PointsOfInterest { get; set; } = new List<PointsOfInterestDto>();
 
     }
+
 }
+
